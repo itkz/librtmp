@@ -1,7 +1,7 @@
 
 package {
-	
-    import flash.display.Sprite;  
+
+    import flash.display.Sprite;
 	import flash.net.NetConnection;
 	import flash.events.NetStatusEvent;
 	import flash.events.SecurityErrorEvent;
@@ -10,15 +10,15 @@ package {
 	import flash.net.NetStream;
 	import flash.net.ObjectEncoding;
 	import flash.text.TextField;
-	
-    public class Player extends Sprite 
+
+    public class Player extends Sprite
 	{
 		private var _connection : NetConnection;
 		private var _stream : NetStream;
 		private var _video : Video;
 		private var _textY : Number;
-		
-        public function Player() 
+
+        public function Player()
 		{
 			_connection = new NetConnection();
 			_connection.addEventListener(NetStatusEvent.NET_STATUS, onNetStatus);
@@ -50,7 +50,7 @@ package {
 				video.attachNetStream(_stream);
 				video.deblocking = 2;
 				video.smoothing = true;
-				
+
 				_stream.play("test.mp4");
 				addChild(video);
 				_video = video
